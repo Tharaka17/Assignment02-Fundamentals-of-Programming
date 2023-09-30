@@ -137,6 +137,12 @@ public class AssignmentStatistics {
                 return Double.compare(student1.total, student2.total);
             }
         });
+        
+        // Print the top 5 students with the lowest total marks
+        System.out.println("\nTop 5 Students with Lowest Total Marks:");
+        for (int i = 0; i < Math.min(5, students.size()); i++) {
+            System.out.println(students.get(i).toString());
+        }
 
     }
 }
