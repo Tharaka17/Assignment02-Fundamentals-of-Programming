@@ -44,7 +44,7 @@ class Student {
     }
 }
 
-public class AssignmentStatistics {
+public class AssignmentStatistics  {
 
     public static void main(String[] args) {
         String unitName = "";
@@ -65,7 +65,7 @@ public class AssignmentStatistics {
                 } else {
                     // Parse student data and create Student objects
                     String[] parts = line.split("\\s+");
-                    if (parts.length >= 5) {
+                    if (parts.length >= 6) {
                         String lastName = parts[0];
                         String firstName = parts[1];
                         String studentID = parts[2];
@@ -133,7 +133,6 @@ public class AssignmentStatistics {
             System.out.println(student.toString());
         }
     }
-
 
     private static void printStudentsBelowThreshold(List<Student> students) {
         // Prompt the user for the threshold
