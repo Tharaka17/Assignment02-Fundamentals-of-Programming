@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 // Define a Student class to store student information
 class Student {
@@ -87,5 +88,14 @@ public class AssignmentStatistics {
         for (Student student : students) {
             System.out.println(student.toString());
         }
+        
+        // Print students below the threshold
+        printStudentsBelowThreshold(students);
+    }
+     private static void printStudentsBelowThreshold(List<Student> students) {
+        // Prompt the user for the threshold
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the threshold for total marks: ");
+        double threshold = scanner.nextDouble();
     }
 }
