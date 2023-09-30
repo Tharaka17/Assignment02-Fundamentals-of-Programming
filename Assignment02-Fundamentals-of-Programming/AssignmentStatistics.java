@@ -49,7 +49,7 @@ public class AssignmentStatistics {
     public static void main(String[] args) {
         String unitName = "";
         List<Student> students = new ArrayList<>();
-        String filePath = "E:\student-grade.txt";
+        String filePath = "E:\\student-grade.txt";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
