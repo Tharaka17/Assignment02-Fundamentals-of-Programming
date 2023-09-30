@@ -18,6 +18,7 @@ class Student {
     double assignment1;
     double assignment2;
     double assignment3;
+    double total;
 
     public Student(String lastName, String firstName, String studentID, double assignment1, double assignment2, double assignment3) {
         // Constructor to initialize student data
@@ -27,12 +28,16 @@ class Student {
         this.assignment1 = assignment1;
         this.assignment2 = assignment2;
         this.assignment3 = assignment3;
+        this.total = assignment1 + assignment2 + assignment3; // Calculate total marks
+
     }
     // Override the toString method to display student details
     @Override
     public String toString() {
+        // Convert student details to a string format for printing
         return "Last Name: " + lastName + ", First Name: " + firstName + ", Student ID: " + studentID +
-        ", Assignment 1: " + assignment1 + ", Assignment 2: " + assignment2 + ", Assignment 3: " + assignment3;
+        ", Assignment 1: " + assignment1 + ", Assignment 2: " + assignment2 + ", Assignment 3: " + assignment3+
+        ", Total Marks: " + total;
     }
 }
 
@@ -70,7 +75,7 @@ public class AssignmentStatistics {
         }catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         // Display the unit name
         System.out.println("Unit Name: " + unitName);
 
