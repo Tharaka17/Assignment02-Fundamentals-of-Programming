@@ -28,10 +28,19 @@ class Student {
         this.assignment2 = assignment2;
         this.assignment3 = assignment3;
     }
-     // Override the toString method to display student details
+    // Override the toString method to display student details
     @Override
     public String toString() {
         return "Last Name: " + lastName + ", First Name: " + firstName + ", Student ID: " + studentID +
-                ", Assignment 1: " + assignment1 + ", Assignment 2: " + assignment2 + ", Assignment 3: " + assignment3;
+        ", Assignment 1: " + assignment1 + ", Assignment 2: " + assignment2 + ", Assignment 3: " + assignment3;
+    }
+}
+
+public class AssignmentStatistics {
+
+    public static void main(String[] args) {
+        String unitName = "";
+        List<Student> students = new ArrayList<>();
+        String filePath = "F:\WALLPAPER\Assignment02\Assignment02-Fundamentals-of-Programming\Assignment02-Fundamentals-of-Programming\student-grade.txt";
     }
 }
