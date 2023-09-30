@@ -73,7 +73,7 @@ public class AssignmentStatistics {
                         double assignment2 = Double.parseDouble(parts[4]);
                         double assignment3 = Double.parseDouble(parts[5]);
 
-                         // Create a Student object and add it to the list
+                        // Create a Student object and add it to the list
                         Student student = new Student(lastName, firstName, studentID, assignment1, assignment2, assignment3);
                         students.add(student);
                     }
@@ -90,20 +90,21 @@ public class AssignmentStatistics {
         for (Student student : students) {
             System.out.println(student.toString());
         }
-        
+
         // Print students below the threshold
         printStudentsBelowThreshold(students);
-        
+
         // Print top 5 students with highest and lowest total marks
         printTopStudents(students);
-        
+
     }
-     private static void printStudentsBelowThreshold(List<Student> students) {
+
+    private static void printStudentsBelowThreshold(List<Student> students) {
         // Prompt the user for the threshold
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the threshold for total marks: ");
         double threshold = scanner.nextDouble();
-        
+
         // Print students below the threshold
         System.out.println("\nStudents with total marks below the threshold:");
         for (Student student : students) {
@@ -111,16 +112,22 @@ public class AssignmentStatistics {
                 System.out.println(student.toString());
             }
         }
-        
+
     }
-    
+
     private static void printTopStudents(List<Student> students) {
         // Sort students by total marks in descending order
         Collections.sort(students, new Comparator<Student>() {
-            @Override
-            public int compare(Student student1, Student student2) {
-                return Double.compare(student2.total, student1.total);
-            }
-        });
+                @Override
+                public int compare(Student student1, Student student2) {
+                    return Double.compare(student2.total, student1.total);
+                }
+            });
+
+        // Print the top 5 students with the highest total marks
+        System.out.println("\nTop 5 Students with Highest Total Marks:");
+        for (int i = 0; i < Math.min(5, students.size()); i++) {
+            System.out.println(students.get(i).toString());
+        }
     }
 }
