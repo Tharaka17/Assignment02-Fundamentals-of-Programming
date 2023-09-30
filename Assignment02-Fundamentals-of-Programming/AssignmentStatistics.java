@@ -70,5 +70,13 @@ public class AssignmentStatistics {
         }catch (IOException e) {
             e.printStackTrace();
         }
+        
+        // Display the unit name
+        System.out.println("Unit Name: " + unitName);
+
+        // Display student details
+        for (Student student : students) {
+            System.out.println(student.toString());
+        }
     }
 }
