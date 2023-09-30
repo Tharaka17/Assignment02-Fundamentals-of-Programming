@@ -129,5 +129,14 @@ public class AssignmentStatistics {
         for (int i = 0; i < Math.min(5, students.size()); i++) {
             System.out.println(students.get(i).toString());
         }
+        
+        // Sort students by total marks in ascending order
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                return Double.compare(student1.total, student2.total);
+            }
+        });
+
     }
 }
