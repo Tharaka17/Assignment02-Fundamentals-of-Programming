@@ -85,7 +85,16 @@ public class AssignmentStatistics {
         
         // Create a Scanner for user input
         Scanner scanner = new Scanner(System.in);
-
+        
+        // Main menu loop
+        while (true) {
+            // Display the menu options
+            System.out.println("\nMenu:");
+            System.out.println("1. Print Unit Name and Student Details");
+            System.out.println("2. Print Students Below Threshold");
+            System.out.println("3. Print Top 5 Students (High and Low)");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice (1/2/3/4): ");
 
         // Display the unit name
         System.out.println("Unit Name: " + unitName);
