@@ -43,7 +43,7 @@ class Student {
 
 public class AssignmentStatistics {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String unitName = "";
         List<Student> students = new ArrayList<>();
         String filePath = "E:\student-grade.txt";
@@ -51,13 +51,16 @@ public class AssignmentStatistics {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
+                // Check if the line is empty or a comment line 
                 if (line.trim().isEmpty() || line.trim().startsWith(" ")) {
                     continue;
                 }
 
+                // Check if the line contains the unit name
                 if (line.startsWith("Unit Name:")) {
                     unitName = line.substring(11).trim();
                 } else {
+                    // Parse student data and create Student objects
                     String[] parts = line.split("\\s+");
                     if (parts.length >= 5) {
                         String lastName = parts[0];
@@ -67,6 +70,7 @@ public class AssignmentStatistics {
                         double assignment2 = Double.parseDouble(parts[4]);
                         double assignment3 = Double.parseDouble(parts[5]);
 
+                         // Create a Student object and add it to the list
                         Student student = new Student(lastName, firstName, studentID, assignment1, assignment2, assignment3);
                         students.add(student);
                     }
