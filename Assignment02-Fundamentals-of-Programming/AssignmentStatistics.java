@@ -82,6 +82,10 @@ public class AssignmentStatistics {
         }catch (IOException e) {
             e.printStackTrace();
         }
+        
+        // Create a Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
 
         // Display the unit name
         System.out.println("Unit Name: " + unitName);
@@ -129,15 +133,15 @@ public class AssignmentStatistics {
         for (int i = 0; i < Math.min(5, students.size()); i++) {
             System.out.println(students.get(i).toString());
         }
-        
+
         // Sort students by total marks in ascending order
         Collections.sort(students, new Comparator<Student>() {
-            @Override
-            public int compare(Student student1, Student student2) {
-                return Double.compare(student1.total, student2.total);
-            }
-        });
-        
+                @Override
+                public int compare(Student student1, Student student2) {
+                    return Double.compare(student1.total, student2.total);
+                }
+            });
+
         // Print the top 5 students with the lowest total marks
         System.out.println("\nTop 5 Students with Lowest Total Marks:");
         for (int i = 0; i < Math.min(5, students.size()); i++) {
