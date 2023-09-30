@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -97,5 +99,14 @@ public class AssignmentStatistics {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the threshold for total marks: ");
         double threshold = scanner.nextDouble();
+        
+        // Print students below the threshold
+        System.out.println("\nStudents with total marks below the threshold:");
+        for (Student student : students) {
+            if (student.total < threshold) {
+                System.out.println(student.toString());
+            }
+        }
+        
     }
 }
