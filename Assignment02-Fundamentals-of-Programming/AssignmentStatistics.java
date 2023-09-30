@@ -82,10 +82,10 @@ public class AssignmentStatistics {
         }catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         // Create a Scanner for user input
         Scanner scanner = new Scanner(System.in);
-        
+
         // Main menu loop
         while (true) {
             // Display the menu options
@@ -96,21 +96,44 @@ public class AssignmentStatistics {
             System.out.println("4. Exit");
             System.out.print("Enter your choice (1/2/3/4): ");
 
-        // Display the unit name
+            // Get user's choice
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    // Print unit name and student details
+                    printUnitNameAndStudentDetails(unitName, students);
+                    break;
+                case 2:
+                    // Print students below the threshold
+                    printStudentsBelowThreshold(students);
+                    break;
+                case 3:
+                    // Print top 5 students
+                    printTopStudents(students);
+                    break;
+                case 4:
+                    // Exit the program
+                    System.out.println("Exiting the program. Goodbye!");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please select a valid option.");
+                    break;
+            }
+        }
+    }
+
+    private static void printUnitNameAndStudentDetails(String unitName, List<Student> students) {
+        // Print the unit name
         System.out.println("Unit Name: " + unitName);
 
         // Display student details
         for (Student student : students) {
             System.out.println(student.toString());
         }
-
-        // Print students below the threshold
-        printStudentsBelowThreshold(students);
-
-        // Print top 5 students with highest and lowest total marks
-        printTopStudents(students);
-
     }
+
 
     private static void printStudentsBelowThreshold(List<Student> students) {
         // Prompt the user for the threshold
