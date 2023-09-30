@@ -93,6 +93,10 @@ public class AssignmentStatistics {
         
         // Print students below the threshold
         printStudentsBelowThreshold(students);
+        
+        // Print top 5 students with highest and lowest total marks
+        printTopStudents(students);
+        
     }
      private static void printStudentsBelowThreshold(List<Student> students) {
         // Prompt the user for the threshold
@@ -108,5 +112,15 @@ public class AssignmentStatistics {
             }
         }
         
+    }
+    
+    private static void printTopStudents(List<Student> students) {
+        // Sort students by total marks in descending order
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                return Double.compare(student2.total, student1.total);
+            }
+        });
     }
 }
